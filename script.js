@@ -46,12 +46,15 @@
         const allBtn = document.createElement('button');
         allBtn.className = 'btn bg-white w-full';
         allBtn.textContent = 'All Trees';
-        allBtn.addEventListener('click', () => { setActiveCategory(null); loadAllPlants(); });
+        allBtn.addEventListener('click', () => { setActiveCategory(null);
+           loadAllPlants(); });
         els.categories.appendChild(allBtn);
 
         categories.forEach(cat => {
-          const id = cat?.id || cat?.category_id || cat?.categoryId || cat?.category_id?.toString?.();
-          const name = cat?.category || cat?.category_name || cat?.name || `Category ${id}`;
+          const id = cat?.id || cat?.category_id || cat?.categoryId ||
+           cat?.category_id?.toString?.();
+          const name = cat?.category || cat?.category_name ||
+           cat?.name || `Category ${id}`;
 
           const btn = document.createElement('button');
           btn.className = 'btn bg-white justify-start';
@@ -87,8 +90,10 @@
 
         const id = p?.id || p?.plantId || p?._id || p?.plant_id;
         const title = p?.plant_name || p?.name || p?.title || 'Unknown Plant';
-        const image = p?.image || p?.img || p?.thumbnail || 'https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1200&auto=format&fit=crop';
-        const short = p?.short_description || p?.description || 'A beautiful plant to green your world.';
+        const image = p?.image || p?.img || p?.thumbnail || 
+        'https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1200&auto=format&fit=crop';
+        const short = p?.short_description || p?.description ||
+         'A beautiful plant to green your world.';
         const category = p?.category || p?.type || '—';
         const priceVal = Number(p?.price || p?.cost || 0);
 
@@ -98,7 +103,8 @@
         cat.textContent = category;
         price.textContent = money(priceVal);
 
-        nameLink.addEventListener('click', (ev) => { ev.preventDefault(); openDetails(id, title); });
+        nameLink.addEventListener('click', (ev) => { ev.preventDefault();
+           openDetails(id, title); });
         addBtn.addEventListener('click', () => addToCart({ id, title, price: priceVal }));
 
         els.cards.appendChild(node);
