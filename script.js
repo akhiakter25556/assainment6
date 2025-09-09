@@ -183,8 +183,8 @@
           <span class="truncate">${item.title}</span>
           <div class="flex items-center gap-3 shrink-0 w-[50%]">
             <span class="text-sm opacity-70">${money(item.price)}</span>
-            <button class="btn btn-ghost btn-xs" title="Remove"
-             aria-label="Remove"> X </button>
+            <button class=" text-red-500 btn btn-ghost btn-xs" title="Remove"
+             aria-label="Remove "> X </button>
           </div>
         `;
         li.querySelector('button').addEventListener('click',
