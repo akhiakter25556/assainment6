@@ -80,7 +80,7 @@
   </header>
 
   <!-- Banner -->
-  <section class="leaf-bg bg-green-200 relative">
+  <section class="leaf-bg bg-green-100 relative">
     <div class="container-max mx-auto px-4 py-16 lg:py-24 grid z-40
      place-items-center text-center relative ">
 
@@ -103,10 +103,12 @@
   </section>
 
   <!-- card -->
+    <h1 class="justify-center mx-auto-0 flex mt-8 font-bold ">Chouse The Trees</h1>
   <template id="card-template">
-    <div class="card bg-white shadow-soft h-full">
+   
+    <div class="card bg-white shadow-soft h-full border border-bg-green mx">
       <figure class="px-4 pt-4">
-        <img class="rounded-xl aspect-[4/3] object-cover  pb-5 p-2 w-[100%]" alt="plant " />
+        <img class="rounded-2xl aspect-[7/6] object-cover h-full opacity-80 p-2 w-full" alt="plant " />
       </figure>
       <div class="card-body w-[500]">
         <a href="#" class="name-link text-lg font-semibold hover:underline"></a>
@@ -115,14 +117,14 @@
 
         <div class="text-sm mt-1 opacity-80 gap-3"><span class="font-medium"></span>
      <div class="flex justify-between">
-              <span class="cat truncate w-[90px] border-4 rounded-2xl
+              <span class="cat truncate w-[90px] border-4 rounded-xl border-2px-solid-green
                items-center  mx-0 text-green-800">Fruit Tree </span>
-              <span class="price font-bold text-green-800">price:450</span>
+              <span class="price font-bold text-green-800">price:৳450</span>
             </div>
         </div>
  
         <button class="rounded-3xl text-white font-bold
-           w-50 h-10 bg-green-600 add-btn">Add to Cart</button>
+           w-59 h-8 bg-green-600 add-btn  mt-10 mb-6 p-1 ">Add to Cart</button>
 
       </div>
     </div>
@@ -134,8 +136,8 @@
     <div class="flex items-end justify-between gap-4 mb-6 ">
 
       <div class="join hidden md:inline-flex">
-        <button id="btn-all" class="btn join-item btn-outline ">All Trees</button>
-        <button id="btn-refresh" class="btn join-item">Refresh</button>
+        <button id="btn-all" class=" join-item btn-outline "></button>
+        <button id="btn-refresh" class=" join-item"></button>
       </div>
     </div>
 
@@ -160,7 +162,7 @@
           <span class="loading loading-spinner loading-lg"></span>
         </div>
         <div id="cards" class="grid grid-cols-1 
-        sm:grid-cols-2 xl:grid-cols-3 gap-6"></div>
+        sm:grid-cols-2 xl:grid-cols-3 gap-3"></div>
         <div id="empty" class="hidden text-center py-12">
           <p class="opacity-70">No trees found in this category.</p>
         </div>
@@ -169,13 +171,14 @@
       <!-- Cart (right) -->
       <aside class="lg:col-span-2">
         <div class="card bg-white shadow-soft sticky top-24">
-          <div class="card-body">
+          <div class="card-body border rounded-2xl w-full">
             <h3 class="card-title">Your Cart</h3>
+            <button></button>
             <ul id="cart-list" class="mt-3 space-y-2 max-h-72 overflow-auto pr-1"></ul>
             <div class="divider my-3"></div>
             <div class="flex items-center justify-between font-semibold">
               <span>Total</span>
-              <span id="cart-total">100 tk</span>
+              <span id="cart-total">৳0</span>
             </div>
           </div>
         </div>

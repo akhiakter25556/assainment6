@@ -1,6 +1,9 @@
     const API_BASE = 'https://openapi.programming-hero.com/api';
+
+
+
     const els = {
-      categories: document.getElementById('category-list'),
+     categories: document.getElementById('category-list'),
       cards: document.getElementById('cards'),
       empty: document.getElementById('empty'),
       loading: document.getElementById('loading'),
@@ -14,10 +17,10 @@
       donateForm: document.getElementById('donation-form')
     };
 
-    const cart = { items: [], total: 100 };
+    const cart = { items: [], total: 0 };
 
 
-    const money = (n) => `${Number(n || 100).toLocaleString()} tk`;
+    const money = (n) => `৳${Number(n || 0).toLocaleString()} `;
     const show = (el) => el.classList.remove('hidden');
     const hide = (el) => el.classList.add('hidden');
 
@@ -44,8 +47,8 @@
 
         // "All Trees" shortcut at top for mobile
         const allBtn = document.createElement('button');
-        allBtn.className = 'btn bg-white w-full';
-        allBtn.textContent = 'All Trees';
+        allBtn.className = 'btn  w-full bg-green-600';
+        allBtn.textContent = 'All Trees ';
         allBtn.addEventListener('click', () => { setActiveCategory(null);
            loadAllPlants(); });
         els.categories.appendChild(allBtn);
@@ -72,7 +75,7 @@
       }
     }
 
-    // Render plant cards
+    //  plant cards
     function renderCards(plants = []) {
       els.cards.innerHTML = '';
       if (!plants.length) { show(els.empty); return; }
@@ -175,13 +178,13 @@
 
       cart.items.forEach((item, idx) => {
         const li = document.createElement('li');
-        li.className = 'flex items-center justify-between gap-3';
+        li.className = ' items-center justify-between gap-3';
         li.innerHTML = `
           <span class="truncate">${item.title}</span>
-          <div class="flex items-center gap-3 shrink-0">
+          <div class="flex items-center gap-3 shrink-0 w-[50%]">
             <span class="text-sm opacity-70">${money(item.price)}</span>
             <button class="btn btn-ghost btn-xs" title="Remove"
-             aria-label="Remove">❌</button>
+             aria-label="Remove"> X </button>
           </div>
         `;
         li.querySelector('button').addEventListener('click',
@@ -215,7 +218,8 @@
       const name = fd.get('name');
       const email = fd.get('email');
       const count = fd.get('count');
-      alert(`Thank you, ${name}! You pledged ${count} tree(s). A confirmation will be sent to ${email}.`);
+      alert(`Thank you, ${name}! You pledged ${count} tree(s). 
+        A confirmation will be sent to ${email}.`);
       e.currentTarget.reset();
     });
 
